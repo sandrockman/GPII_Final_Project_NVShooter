@@ -3,7 +3,7 @@ using System.Collections;
 
 public class TargetAI : MonoBehaviour {
 
-	public Collider TargetActiveRange;
+	//public Collider TargetActiveRange;
 	public float moveSpeed;
 	public float rotateSpeed;
 

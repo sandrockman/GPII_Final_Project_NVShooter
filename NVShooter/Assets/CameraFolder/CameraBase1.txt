@@ -1,0 +1,1 @@
+camera General 60 0.5 1.5

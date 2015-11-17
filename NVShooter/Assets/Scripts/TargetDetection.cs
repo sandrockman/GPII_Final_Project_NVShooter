@@ -3,7 +3,7 @@ using System.Collections;
 
 public class TargetDetection : MonoBehaviour {
 
-    public TargetAI targetAI;
+    TargetAI targetAI;
 
     // Use this for initialization
     void Start()
