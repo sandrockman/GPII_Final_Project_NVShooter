@@ -273,6 +273,11 @@ public class ScriptEngine : MonoBehaviour {
         return oneMinusT * oneMinusT * start + 2f * oneMinusT * t * curve + t * t * end;
     }
 
+	/// <summary>
+	/// Raises the draw gizmos event.This is part of the Unity API that will draw gizmos.
+	/// Gizmos are simple lines, wire frames and/or objects that show up only on scene window unless
+	/// specifically told to in other locations by those locations, like the game window.
+	/// </summary>
     void OnDrawGizmos()
     {
         GameObject start = GameObject.FindGameObjectWithTag("Start");
