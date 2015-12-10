@@ -6,39 +6,30 @@ using System;
 
 public class NewMainMenuScript : NetworkBehaviour {
 
-    enum CanvasSetting
-    {
-        MAIN,
-        CREATE,
-        JOIN
-    };
-
     public Canvas mainMenu;
     public Canvas createMenu;
     public Canvas joinMenu;
-
-    CanvasSetting menuSetting;
+	public Canvas premiseMenu;
+	public Canvas creditsMenu;
 
     public NetworkManager manager;
     public Text levelSelect;
 
 	// Use this for initialization
 	void Start () {
-        menuSetting = CanvasSetting.MAIN;
+		_BackToMainMenu ();
 	}
 
     public void _MenuCreateGame()
     {
         createMenu.enabled = true;
-        mainMenu.enabled = false;
-        menuSetting = CanvasSetting.CREATE;
+		mainMenu.enabled = false;
     }
 
     public void _MenuJoinGame()
     {
         joinMenu.enabled = true;
         mainMenu.enabled = false;
-        menuSetting = CanvasSetting.JOIN;
     }
 
     public void _QuitGame()
@@ -51,10 +42,23 @@ public class NewMainMenuScript : NetworkBehaviour {
         mainMenu.enabled = true;
         createMenu.enabled = false;
         joinMenu.enabled = false;
-        menuSetting = CanvasSetting.MAIN;
+		premiseMenu.enabled = false;
+		creditsMenu.enabled = false;
     }
 
-    public void _CreateHostGame()
+	public void _ToPremiseMenu()
+	{
+		premiseMenu.enabled = true;
+		mainMenu.enabled = false;
+	}
+	
+	public void _ToCreditsMenu()
+	{
+		creditsMenu.enabled = true;
+		mainMenu.enabled = false;
+	}
+	
+	public void _CreateHostGame()
     {
         manager.StartHost();
     }
